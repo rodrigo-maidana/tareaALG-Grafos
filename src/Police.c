@@ -1,5 +1,6 @@
 #include "Police.h"
 #include "PriorityQueue.h"
+#include <limits.h>
 #include <stdlib.h>
 
 typedef struct {

@@ -153,7 +153,7 @@ void printGame(Game *g) {
 
 void playGame(Game *g) {
   if (g) {
-    for (int t = 1; 1 == 1; t++) {
+    for (int t = 1; t <= 300; t++) {
       printf("Move %d\n", t);
       // bandit moves
       if (equalsSite(g->policeSite, g->banditSite))
@@ -177,8 +177,15 @@ void playGame(Game *g) {
         return;
       }
       printGame(g);
+
+      if (t == 300) {
+        printf("Bandit wins by surviving 300 moves!\n");
+        return;
+      }
     }
-    printf("Caught by police\n");
+    if (equalsSite(g->policeSite, g->banditSite)) {
+      printf("Caught by police\n");
+    }
   }
 }
 
